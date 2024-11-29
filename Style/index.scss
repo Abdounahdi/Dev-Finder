@@ -1,0 +1,35 @@
+// Variables
+
+$backgroundDarkColor: rgba(20, 28, 47, 255);
+$cardColorDark: #1f2a48;
+$blueBtnColor: #0079fe;
+$textWhiteColor: #dae3e6;
+$textGreyishColor: #97a0ab;
+$fontStyle: "Azeret Mono", monospace;
+
+/// Generals
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  background-color: $backgroundDarkColor;
+  // background-color: red;
+}
+
+body {
+  font-family: $fontStyle;
+  line-height: 1;
+  color: $textWhiteColor;
+
+
+}
+
+.container {
+  
+}

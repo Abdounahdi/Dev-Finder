@@ -7,9 +7,8 @@ $textWhiteColor: #dae3e6;
 $textGreyishColor: #97a0ab;
 $fontStyle: "Azeret Mono", monospace;
 
-
-///BreakPoints : 
-/// 
+///BreakPoints :
+///
 
 $breakpoints: (
   "tablette": 1060px,
@@ -36,18 +35,16 @@ $breakpoints: (
     @content;
   }
 }
-@mixin mobile_L{
+@mixin mobile_L {
   @media (max-width: map-get($breakpoints, "mobile_L")) {
     @content;
   }
 }
-@mixin mobile{
+@mixin mobile {
   @media (max-width: map-get($breakpoints, "mobile")) {
     @content;
   }
 }
-
-
 
 /// Generals
 
@@ -64,6 +61,11 @@ html {
   // background-color: red;
 }
 
+// .dark_mode-HTML{
+//   background-color: white ;
+
+// }
+
 body {
   font-family: $fontStyle;
   line-height: 1;
@@ -77,19 +79,18 @@ body {
   width: 100rem;
   margin: 15rem auto;
 
-  @include tablette{
+  @include tablette {
     width: 80rem;
     margin: 7rem auto;
   }
-  @include tablette_sm{
+  @include tablette_sm {
     width: 60rem;
     margin: 5rem auto;
   }
 
-  @include tablette_Ver{
+  @include tablette_Ver {
     width: 95%;
   }
-  
 
   header {
     width: 100%;
@@ -155,7 +156,7 @@ body {
           height: 4.2rem;
           width: 4.2rem;
           stroke: $blueBtnColor;
-          @include mobile{
+          @include mobile {
             display: none;
           }
         }
@@ -201,8 +202,8 @@ body {
           background-color: $blueBtnColor;
         }
 
-        @include mobile{
-          p{
+        @include mobile {
+          p {
             display: none;
           }
 
@@ -210,13 +211,13 @@ body {
           border-radius: 50%;
         }
 
-        .search_svg-mobile{
+        .search_svg-mobile {
           display: none;
           height: 3.2rem;
           width: 3.2rem;
           stroke: $textWhiteColor;
 
-          @include mobile{
+          @include mobile {
             display: inline;
           }
         }
@@ -234,7 +235,7 @@ body {
 
       border-radius: 1rem;
 
-      @include tablette_Ver{
+      @include tablette_Ver {
         flex-direction: column;
         align-items: center;
         padding: 6rem 0.5rem;
@@ -246,7 +247,7 @@ body {
         justify-content: center;
         width: 19rem;
 
-        @include tablette_Ver{
+        @include tablette_Ver {
           align-self: center;
         }
 
@@ -284,7 +285,7 @@ body {
             }
           }
 
-          @include mobile_L{
+          @include mobile_L {
             flex-direction: column;
             gap: 2rem;
           }
@@ -301,7 +302,7 @@ body {
           background-color: $backgroundDarkColor;
           border-radius: 1rem;
           padding: 4rem 1rem;
-          box-shadow:  rgba(20, 28, 47, 0.438) 0px 2px 8px 0px;
+          box-shadow: rgba(20, 28, 47, 0.438) 0px 2px 8px 0px;
           margin-bottom: 2rem;
 
           @include mobile {
@@ -309,60 +310,54 @@ body {
             gap: 4rem;
           }
 
-          .user_details--{
+          .user_details-- {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             font-size: 2rem;
-            @include mobile_L{
+            @include mobile_L {
               align-items: center;
               font-size: 1.6rem;
             }
-
-            
           }
         }
 
-        .user_socials--container{
+        .user_socials--container {
           display: grid;
           grid-template-columns: 1fr 1fr;
           row-gap: 2.5rem;
-          a{
+          a {
             text-decoration: none;
             color: $textWhiteColor;
           }
 
-          @include tablette_Ver{
+          @include tablette_Ver {
             grid-template-columns: 1fr;
           }
 
-          .user_socials{
+          .user_socials {
             display: flex;
             align-items: center;
             gap: 1.5rem;
 
-            .socials-svg{
-              height: 3rem ; 
+            .socials-svg {
+              height: 3rem;
               width: 3rem;
-
             }
           }
 
-          .link_not_availble{
+          .link_not_availble {
             color: $textGreyishColor;
-            a{
+            a {
               color: $textGreyishColor;
             }
           }
         }
-
       }
     }
   }
 }
 
-
-.hidden{
+.hidden {
   display: none !important;
 }
-

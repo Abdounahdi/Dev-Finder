@@ -7,6 +7,48 @@ $textWhiteColor: #dae3e6;
 $textGreyishColor: #97a0ab;
 $fontStyle: "Azeret Mono", monospace;
 
+
+///BreakPoints : 
+/// 
+
+$breakpoints: (
+  "tablette": 1060px,
+  "tablette_sm": 850px,
+  "tablette_Ver": 620px,
+  "mobile_L": 450px,
+  "mobile": 375px,
+);
+
+@mixin tablette {
+  @media (max-width: map-get($breakpoints, "tablette")) {
+    @content;
+  }
+}
+
+@mixin tablette_sm {
+  @media (max-width: map-get($breakpoints, "tablette_sm")) {
+    @content;
+  }
+}
+
+@mixin tablette_Ver {
+  @media (max-width: map-get($breakpoints, "tablette_Ver")) {
+    @content;
+  }
+}
+@mixin mobile_L{
+  @media (max-width: map-get($breakpoints, "mobile_L")) {
+    @content;
+  }
+}
+@mixin mobile{
+  @media (max-width: map-get($breakpoints, "mobile")) {
+    @content;
+  }
+}
+
+
+
 /// Generals
 
 * {
@@ -26,10 +68,301 @@ body {
   font-family: $fontStyle;
   line-height: 1;
   color: $textWhiteColor;
-
-
+  width: 100%;
+  font-size: 1.6rem;
 }
 
 .container {
+  // width: 100%;
+  width: 100rem;
+  margin: 15rem auto;
+
+  @include tablette{
+    width: 80rem;
+    margin: 7rem auto;
+  }
+  @include tablette_sm{
+    width: 60rem;
+    margin: 5rem auto;
+  }
+
+  @include tablette_Ver{
+    width: 95%;
+  }
   
+
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 5rem;
+
+    .site_header {
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: white;
+    }
+
+    .dark_mode-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+
+      border: none;
+      background: none;
+
+      color: white;
+      font-family: $fontStyle;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      font-weight: 200;
+      letter-spacing: 0.2rem;
+
+      cursor: pointer;
+
+      .switch_mode--svg {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+
+  .main_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+    .search_container {
+      background-color: $cardColorDark;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-radius: 1rem;
+
+      .input_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        width: 80%;
+
+        .search_svg {
+          height: 4.2rem;
+          width: 4.2rem;
+          stroke: $blueBtnColor;
+          @include mobile{
+            display: none;
+          }
+        }
+
+        .search_input {
+          background: none;
+          font-size: 2rem;
+          border: none;
+          color: white;
+          width: 100%;
+          outline: none;
+          // cursor: pointer;
+          &::placeholder {
+            color: $textWhiteColor;
+            font-family: $fontStyle;
+            font-weight: 300;
+          }
+        }
+      }
+
+      .search_btn {
+        display: flex;
+        background: none;
+        border: none;
+
+        font-size: 1.6rem;
+        font-family: $fontStyle;
+        color: white;
+        border-radius: 1rem;
+
+        align-items: center;
+        background-color: $blueBtnColor;
+        padding: 1.5rem 2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: #2d90fb;
+          box-shadow: hsla(211, 96%, 58%, 0.338) 2px 2px 20px 0px;
+        }
+        &:active {
+          box-shadow: hsla(211, 96%, 58%, 0.338) 2px 2px 5px 0px;
+          background-color: $blueBtnColor;
+        }
+
+        @include mobile{
+          p{
+            display: none;
+          }
+
+          padding: 0.5rem;
+          border-radius: 50%;
+        }
+
+        .search_svg-mobile{
+          display: none;
+          height: 3.2rem;
+          width: 3.2rem;
+          stroke: $textWhiteColor;
+
+          @include mobile{
+            display: inline;
+          }
+        }
+      }
+    }
+
+    .user_details--container {
+      display: flex;
+      background-color: $cardColorDark;
+      padding: 6rem 4rem;
+      display: flex;
+      gap: 2rem;
+
+      align-items: flex-start;
+
+      border-radius: 1rem;
+
+      @include tablette_Ver{
+        flex-direction: column;
+        align-items: center;
+        padding: 6rem 0.5rem;
+      }
+
+      .user_img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 19rem;
+
+        @include tablette_Ver{
+          align-self: center;
+        }
+
+        .user_profile--pic {
+          width: 100%;
+        }
+      }
+
+      .user_details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3.5rem;
+
+        width: 90%;
+
+        .user_heading {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-items: flex-start;
+          .user_name--container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .userName {
+              font-size: 2.8rem;
+              font-weight: 550;
+              color: white;
+            }
+            .username__ {
+              text-decoration: none;
+              color: $blueBtnColor;
+            }
+          }
+
+          @include mobile_L{
+            flex-direction: column;
+            gap: 2rem;
+          }
+        }
+
+        .user_bio {
+          color: $textGreyishColor;
+        }
+
+        .user_details--inner {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          background-color: $backgroundDarkColor;
+          border-radius: 1rem;
+          padding: 4rem 1rem;
+          box-shadow:  rgba(20, 28, 47, 0.438) 0px 2px 8px 0px;
+          margin-bottom: 2rem;
+
+          @include mobile {
+            flex-direction: column;
+            gap: 4rem;
+          }
+
+          .user_details--{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 2rem;
+            @include mobile_L{
+              align-items: center;
+              font-size: 1.6rem;
+            }
+
+            
+          }
+        }
+
+        .user_socials--container{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          row-gap: 2.5rem;
+          a{
+            text-decoration: none;
+            color: $textWhiteColor;
+          }
+
+          @include tablette_Ver{
+            grid-template-columns: 1fr;
+          }
+
+          .user_socials{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+
+            .socials-svg{
+              height: 3rem ; 
+              width: 3rem;
+
+            }
+          }
+
+          .link_not_availble{
+            color: $textGreyishColor;
+            a{
+              color: $textGreyishColor;
+            }
+          }
+        }
+
+      }
+    }
+  }
 }
+
+
+.hidden{
+  display: none !important;
+}
+

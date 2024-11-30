@@ -1,3 +1,5 @@
+
+
 // Variables
 
 $backgroundDarkColor: rgba(20, 28, 47, 255);
@@ -6,6 +8,8 @@ $blueBtnColor: #0079fe;
 $textWhiteColor: #dae3e6;
 $textGreyishColor: #97a0ab;
 $fontStyle: "Azeret Mono", monospace;
+
+@import "dark-mode" ; 
 
 ///BreakPoints :
 ///
@@ -58,13 +62,8 @@ html {
   font-size: 62.5%;
   height: 100%;
   background-color: $backgroundDarkColor;
-  // background-color: red;
+  // background-color: red ;
 }
-
-// .dark_mode-HTML{
-//   background-color: white ;
-
-// }
 
 body {
   font-family: $fontStyle;
@@ -73,6 +72,8 @@ body {
   width: 100%;
   font-size: 1.6rem;
 }
+
+
 
 .container {
   // width: 100%;

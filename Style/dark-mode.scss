@@ -1,0 +1,92 @@
+//Variables 
+
+$white-background :   rgb(225, 232, 254); 
+$dark-text-header : #3a3c3d ;
+$light-cardColor : white;
+$dark-text-blue:#4c6998 ; 
+
+.dark_mode-HTML{
+    background-color:  $white-background ;
+    body{
+      header{
+        .site_header{
+          color:$dark-text-header;
+        }
+
+        .dark_mode-btn {
+            color:$dark-text-header;
+            font-weight: 400;
+        }
+      }
+
+      .main_container{
+        .search_container{
+            background-color: $light-cardColor;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+            .input_container{
+                .search_input{
+                    color: $dark-text-header;
+                    &::placeholder{
+                        color: $dark-text-header;
+                    }
+                }
+            }
+        }
+
+        .user_details--container{
+            background-color: $light-cardColor;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+            .user_details{
+                .user_heading{
+                    .user_name--container{
+                        .userName{
+                            color: $dark-text-header;
+                        }
+                    }
+                }
+
+                .date_joined{
+                    color: $textGreyishColor;
+                }
+
+                .user_details--inner{
+                    background-color: $white-background;
+
+                    box-shadow: none;
+                    .user_details--{
+                        color: $textGreyishColor;
+                        .user-numbers{
+                            color: $dark-text-blue;
+                        }
+                    }
+                }
+
+                .user_socials--container {
+                    a{
+                        color: $dark-text-blue;
+                    }
+                    .user_socials{
+                        .socials-svg{
+                            color: $dark-text-blue;
+                        }
+                    }
+
+                    .link_not_availble {
+                        color: $textGreyishColor;
+                        .socials-svg{
+                            color: $textGreyishColor;
+                        }
+                        a {
+                          color: $textGreyishColor;
+                        }
+                      }
+                }
+            }
+        }
+
+      }
+    }
+  
+  }

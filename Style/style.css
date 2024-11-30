@@ -1,3 +1,59 @@
+.dark_mode-HTML {
+  background-color: rgb(225, 232, 254);
+}
+.dark_mode-HTML body header .site_header {
+  color: #3a3c3d;
+}
+.dark_mode-HTML body header .dark_mode-btn {
+  color: #3a3c3d;
+  font-weight: 400;
+}
+.dark_mode-HTML body .main_container .search_container {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.dark_mode-HTML body .main_container .search_container .input_container .search_input {
+  color: #3a3c3d;
+}
+.dark_mode-HTML body .main_container .search_container .input_container .search_input::placeholder {
+  color: #3a3c3d;
+}
+.dark_mode-HTML body .main_container .user_details--container {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .user_heading .user_name--container .userName {
+  color: #3a3c3d;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .date_joined {
+  color: #97a0ab;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .user_details--inner {
+  background-color: rgb(225, 232, 254);
+  box-shadow: none;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .user_details--inner .user_details-- {
+  color: #97a0ab;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .user_details--inner .user_details-- .user-numbers {
+  color: #4c6998;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .user_socials--container a {
+  color: #4c6998;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .user_socials--container .user_socials .socials-svg {
+  color: #4c6998;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .user_socials--container .link_not_availble {
+  color: #97a0ab;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .user_socials--container .link_not_availble .socials-svg {
+  color: #97a0ab;
+}
+.dark_mode-HTML body .main_container .user_details--container .user_details .user_socials--container .link_not_availble a {
+  color: #97a0ab;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -64,6 +64,7 @@ html {
   font-size: 62.5%;
   height: 100%;
   background-color: rgb(20, 28, 47);
+  transition: all 0.3s ease-in;
 }
 
 body {
@@ -137,6 +138,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.3s;
   border-radius: 1rem;
 }
 .container .main_container .search_container .input_container {
@@ -217,6 +219,7 @@ body {
   padding: 6rem 4rem;
   display: flex;
   gap: 2rem;
+  transition: all 0.3s;
   align-items: flex-start;
   border-radius: 1rem;
 }
@@ -240,6 +243,7 @@ body {
 }
 .container .main_container .user_details--container .user_img .user_profile--pic {
   width: 100%;
+  border-radius: 50%;
 }
 .container .main_container .user_details--container .user_details {
   display: flex;
@@ -286,6 +290,7 @@ body {
   padding: 4rem 1rem;
   box-shadow: rgba(20, 28, 47, 0.438) 0px 2px 8px 0px;
   margin-bottom: 2rem;
+  transition: all 0.3s;
 }
 @media (max-width: 375px) {
   .container .main_container .user_details--container .user_details .user_details--inner {
@@ -337,4 +342,11 @@ body {
 
 .hidden {
   display: none !important;
+}
+
+.not_availble {
+  color: #97a0ab !important;
+}
+.not_availble a {
+  color: #97a0ab !important;
 }

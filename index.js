@@ -140,9 +140,14 @@ const github = document.querySelector(".github_link");
 const company = document.querySelector(".company_link");
 
 searchBtn.addEventListener("click", async function () {
-  const gitHubData = await getUser("octocat");
-  // console.log(gitHubData) ;
-  updateUi(gitHubData);
+  const userName = inputSearch.value ? inputSearch.value: console.log('not a real username'); 
+  if (userName){
+    const gitHubData = await getUser(userName);
+    console.log(gitHubData) ;
+    updateUi(gitHubData);
+  }
+
+  // const gitHubData = await getUser("octocat");
 });
 
 
@@ -151,6 +156,8 @@ const getUser = async function (name) {
   try {
     const res = await fetch(`https://api.github.com/users/${name}`);
     if (!res.ok) {
+      inputSearch.value = '' ; 
+      inputSearch.closest('.search_container').classList.add('apply-shake')
       throw new Error(`Response status: ${res.status}`);
     }
     const data = await res.json();
@@ -199,13 +206,12 @@ const getDate = function (date) {
 };
 
 const updateUi = function (data) {
-  console.log(data);
 
   userPicture.src = checkExistance(userPicture, data.avatar_url);
   userName.textContent = checkExistance(userName, data.name);
   userNameLink.textContent = `@${checkExistance(userNameLink, data.login)}`;
   userNameLink.href = checkExistance(userNameLink, data.html_url);
-  dateJoined.textContent = `Joined`;
+  dateJoined.textContent = `${getDate(data.created_at)}`;
   bio.textContent = checkExistance(bio, data.bio);
   userRepos.textContent = checkExistance(userRepos, data.public_repos);
   userFollowers.textContent = checkExistance(userFollowers, data.followers);
@@ -221,5 +227,10 @@ const updateUi = function (data) {
 };
 
 
-const githubdatainitial = await getUser("octocat"); 
-updateUi(githubdatainitial); 
+// const githubdatainitial = await getUser("octocat"); 
+// updateUi(githubdatainitial); 
+
+
+inputSearch.closest('.search_container').addEventListener("animationend", (e) => 
+  inputSearch.closest('.search_container').classList.remove("apply-shake")
+);
